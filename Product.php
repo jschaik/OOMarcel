@@ -3,7 +3,16 @@
 class Product
 {
     public $name;
+    public $category;
     public $price;
+
+    public function setName($name){
+        $this->name = strtolower($name) ;
+    }
+
+    public function setCategory($category) {
+        $this->category = strtoupper($category);
+    }
 
     public function showSalesPrice()
     {
@@ -15,10 +24,14 @@ class Product
 }
 
 $game = new Product();
-$game->name = "fifa";
-$game->price = 40;
+//$game->name = "fifa";
+//$game->price = 40;
 
-echo $game->showSalesPrice();
+$game->setName("test") ;
+$game->setCategory("playstation") ;
+echo $game -> name . "<br>";
+echo $game -> category . "<br>";
+
 
 
 
