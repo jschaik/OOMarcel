@@ -6,11 +6,19 @@ class Product
     public $category;
     public $price;
 
-    public function setName($name){
-        $this->name = strtolower($name) ;
+    public $description;
+
+
+    public function __construct($name, $price, $description)
+    {
+        $this->name = strtolower($name);
+        $this->price = $price;
+        $this->description = $description;
     }
 
-    public function setCategory($category) {
+
+    public function setCategory($category)
+    {
         $this->category = strtoupper($category);
     }
 
@@ -23,14 +31,12 @@ class Product
 
 }
 
-$game = new Product();
-//$game->name = "fifa";
-//$game->price = 40;
-
-$game->setName("test") ;
-$game->setCategory("playstation") ;
-echo $game -> name . "<br>";
-echo $game -> category . "<br>";
+$game = new Product("fifa", 20, "dit is een beschrijving");
+$game->setCategory("playstation");
+echo $game->name . "<br>";
+echo $game->category . "<br>";
+echo $game->price . "<br>";
+echo $game->description . "<br>";
 
 
 
